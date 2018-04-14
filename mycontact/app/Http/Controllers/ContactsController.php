@@ -26,21 +26,16 @@ class ContactsController extends Controller
 
   public function add(Request $request)
   {
-      // проверяем, что все обязательные поля на месте
-      // https://laravel.com/docs/5.6/validation
       $request->validate([
           'name' => 'required',
-          'email' => 'email',
+          'email' => 'required|email',
       ]);
-
       $contact = new Contact();
       $contact->name = $request->name;
       $contact->job = $request->job;
       $contact->comment = $request->comment;
       $contact->email = $request->email;
-      // сохраняем изменения в бд - создает новую запись
       $contact->save();
-
       return redirect('/');
   }
 
@@ -57,7 +52,6 @@ class ContactsController extends Controller
       $contact->job = $request->job;
       $contact->comment = $request->comment;
       $contact->email = $request->email;
-      // сохраняем изменения в бд - создает новую запись
       $contact->save();
       return redirect('/contact/'.$id.'');
   }
@@ -66,7 +60,6 @@ class ContactsController extends Controller
   {
       $contact = Contact::findOrFail($id);
       $contact->delete();
-
       return redirect('/');
   }
 

@@ -32,7 +32,7 @@
         <textarea class="form-control" aria-label="With textarea" name="comment">{{$contact->comment}}</textarea>
       </div>
       <br>
-      <a href="{{url('/')}}"><button type="button" class="btn btn-info">Назад</button></a>
+      <a href="{{url('contact/'.$contact->id)}}"><button type="button" class="btn btn-info">Назад</button></a>
       <input type="submit" value="Изменить" class="btn btn-info">
     </form>
 @endsection

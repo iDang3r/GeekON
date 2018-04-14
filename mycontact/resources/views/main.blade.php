@@ -9,9 +9,12 @@
         margin: 3%;
         background-color: #FFFAFA;
       }
-      /* #main {
-        height: 700px;
-      } */
+      #left {
+        margin-left: -2%;
+      }
+      li {
+        margin: 0.5%;
+      }
     </style>
   </head>
   <body>
